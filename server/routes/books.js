@@ -28,8 +28,14 @@ router.get('/add', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/  
-    res.render('books/add', {
-    title: 'Add Book'
+    res.render('books/details', {
+      title: 'Add Book', 
+      book: book({
+        "Title": "",
+        "Price": 0,
+        "Author": "",
+        "Genre": ""
+      })
   });
 });
 
@@ -60,7 +66,7 @@ router.post('/add', (req, res, next) => {
 });
 
 // GET the Book Details page in order to edit an existing Book
-router.get('/details/:id', (req, res, next) => {
+router.get('/:id', (req, res, next) => {
 
     /*****************
      * ADD CODE HERE *
@@ -86,7 +92,7 @@ router.get('/details/:id', (req, res, next) => {
 });
 
 // POST - process the information passed from the details form and update the document
-router.post('/details/:id', (req, res, next) => {
+router.post('/:id', (req, res, next) => {
 
     /*****************
      * ADD CODE HERE *
